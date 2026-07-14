@@ -19,6 +19,11 @@ Where provided, tutorials are available in two versions:
   - [Tutorial](Module%201/Part%203%20Drift%20Diffusion%20Model/tutorial_1C_DDM.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%201/Part%203%20Drift%20Diffusion%20Model/tutorial_1C_DDM.ipynb)
   - [Lecture slides](Module%201/Part%203%20Drift%20Diffusion%20Model/BAMB%21%202026%20DDM%20Lecture.pdf)
 
+### Mini-projects
+
+- [Project and dataset guide](datasets/README.md)
+- [Mini-Project 1 dataset description](datasets/BAMB%21%202026%20-%20datasets%20for%20mini-Project%201.pdf)
+
 ## Module 2: Reinforcement learning and Bayesian decision theory
 
 - Part 1: Reinforcement-learning models
@@ -28,9 +33,6 @@ Where provided, tutorials are available in two versions:
   - Tutorial: [notebook](Module2/part_2/module2_part2.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module2/part_2/module2_part2.ipynb)
   - Solutions: [notebook](Module2/part_2/module2_part2_solutions.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module2/part_2/module2_part2_solutions.ipynb)
 
-## Mini-projects
+### Mini-projects
 
-### Module 1
-
-- [Project and dataset guide](datasets/README.md)
-- [Mini-Project 1 dataset description](datasets/BAMB%21%202026%20-%20datasets%20for%20mini-Project%201.pdf)
+- [Download the Rouault et al. task (.zip)](https://github.com/bambschool/BAMB2026/raw/refs/heads/main/Module2/rouault_task.zip)
