@@ -29,7 +29,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [tool.hatch.build.targets.wheel]
-packages = ["part1_rl_basics"]
+packages = ["part1_sequential_decisions"]
 
 [tool.ruff]
 # the tutorial notebook is teaching material: it deliberately redefines the agents

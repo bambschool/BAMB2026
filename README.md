@@ -41,6 +41,6 @@ Where provided, tutorials are available in two versions:
 
 - [Introduction, setup, and resources](Module%203/README.md)
 - Part 1: RL basics
-  - [Tutorial overview](Module%203/part1_rl_basics/README.md)
-  - Tutorial: [notebook](Module%203/part1_rl_basics/tutorial_3a.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%203/part1_rl_basics/tutorial_3a.ipynb)
+  - [Tutorial overview](Module%203/part1_sequential_decisions/README.md)
+  - Tutorial: [notebook](Module%203/part1_sequential_decisions/tutorial_3a.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%203/part1_sequential_decisions/tutorial_3a.ipynb)
 - Part 2: Fitting RL models to behavior — *coming soon*

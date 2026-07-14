@@ -2,7 +2,7 @@
 
 Welcome to the BAMB! 2026 tutorial for the reinforcement learning module. The tutorial is divided in two parts:
 
-1. [Basics of RL](./part1_rl_basics/)
+1. [Basics of RL](./part1_sequential_decisions/)
    - Intro to structuring your RL agents and environments properly by following [gym API standards](https://github.com/Farama-Foundation/Gymnasium?tab=readme-ov-file#api)
    - Intro to RL algorithms in their simplest, tabular form
    - Extending them to classic control environments such as [CartPole](https://gymnasium.farama.org/environments/classic_control/cart_pole/)
@@ -47,7 +47,7 @@ To work through the tutorial notebook, launch it with:
 
 ```sh
 # from the "Module 3/" folder
-uv run jupyter lab part1_rl_basics/tutorial_3a.ipynb
+uv run jupyter lab part1_sequential_decisions/tutorial_3a.ipynb
 ```
 
 If you prefer VSCode, just open the notebook and select the `.venv` interpreter in the top-right kernel picker.
