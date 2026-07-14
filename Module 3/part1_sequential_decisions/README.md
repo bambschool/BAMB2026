@@ -1,6 +1,8 @@
-# Basics of Reinforcement Learning
+# Part 1: From bandits to gridworlds
 
-Welcome to the first part of our interactive Reinforcement Learning (RL) tutorial. This tutorial is designed to provide an introduction to RL concepts by hands-on learning and experimentation.
+Welcome to the first part of Module 3. In Module 2, you fit reinforcement learning (RL) models to choices on a bandit task: one situation, one choice, and a reward that arrived immediately afterwards. Very little of what you actually do in a day looks like that. Making coffee, crossing a road, or picking up a cube with a robot arm all take a *sequence* of actions, the situation you face next depends on the action you just took, and whatever tells you that it went well tends to arrive only at the very end.
+
+This part is about what you have to add to the bandit picture to cope with all that: states, transitions, and a way of assigning credit to actions whose consequences are delayed. It is designed to introduce these concepts through hands-on learning and experimentation.
 
 You will be working with the [`tutorial_3a.ipynb`](./tutorial_3a.ipynb) - the jupyter notebook with all instructions and code. Although you don't need to know and understand it, feel free to look at the helper code present in [`agents.py`](./agents.py), [`environments.py`](./environments.py), [`simulate.py`](./simulate.py), and [`plots.py`](./plots.py).
 

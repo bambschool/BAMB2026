@@ -1,12 +1,14 @@
-# Module 3 — Reinforcement Learning
+# Module 3: Learning to act
 
-Welcome to the BAMB! 2026 tutorial for the reinforcement learning module. The tutorial is divided in two parts:
+Welcome to the BAMB! 2026 tutorial for Module 3. The question behind this module is a simple one: how does an agent, biological or artificial, learn to act? There are two very different answers to it, and we take one in each part.
 
-1. [Basics of RL](./part1_sequential_decisions/)
-   - Intro to structuring your RL agents and environments properly by following [gym API standards](https://github.com/Farama-Foundation/Gymnasium?tab=readme-ov-file#api)
+1. [From bandits to gridworlds](./part1_sequential_decisions/): learning to act by *trial and error*.
+   - Intro to structuring your agents and environments properly by following [gym API standards](https://github.com/Farama-Foundation/Gymnasium?tab=readme-ov-file#api)
    - Intro to RL algorithms in their simplest, tabular form
    - Extending them to classic control environments such as [CartPole](https://gymnasium.farama.org/environments/classic_control/cart_pole/)
-2. Fitting RL models to behavior — *coming soon*
+2. Imitation learning on a real robot: learning to act by *copying someone who already knows how*. *Coming soon.*
+
+In Module 2, you fit RL models to behaviour on tasks where a single choice was followed immediately by a reward. Part 1 picks up exactly there and adds everything those tasks leave out: states, transitions, and rewards that only arrive long after the action that earned them. Part 2 then takes the reward away altogether, which is closer to how you learned most of what you know.
 
 ## Installation
 

@@ -1,7 +1,7 @@
 [project]
-name = "module3-reinforcement-learning"
+name = "module3-learning-to-act"
 version = "0.1.0"
-description = "BAMB! 2026 — Module 3, Reinforcement Learning"
+description = "BAMB! 2026, Module 3: Learning to act"
 authors = [{ name = "nisheetpatel", email = "nisheet.pat@gmail.com" }]
 readme = "README.md"
 requires-python = ">=3.10"
