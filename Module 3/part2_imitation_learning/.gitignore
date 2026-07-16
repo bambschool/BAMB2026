@@ -1,2 +1,4 @@
 *.pt
 train_blind_chunked_solution.py
+session_runbook.md
+__pycache__/

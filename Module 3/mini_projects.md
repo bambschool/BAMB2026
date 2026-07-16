@@ -51,7 +51,10 @@ to predict the next one and a terrible way to do a task.
 
 That is [causal confusion](https://arxiv.org/abs/1905.11979), and it is exactly the
 over-imitating child from Section 1 of the tutorial: faithfully copying the part of the
-demonstration that had nothing to do with why it worked.
+demonstration that had nothing to do with why it worked. And the previous action is not the
+only input with this property. At 30 frames per second, ask yourself how different the
+correct output can possibly be from things the policy is already handed — and what gradient
+descent does with an input that nearly equals the label.
 
 It is also a warning about your scoreboard, one the session already demonstrated on real
 hardware. **Held-out prediction error is not competence.** It grades your policy frame by
