@@ -7,13 +7,19 @@ flags below have been checked against that version.
 > (two USB-C ports, two arms), so the finale policy is *blind*: the tutorial's clone plus
 > action chunking, trained by [`train_blind_chunked.py`](./train_blind_chunked.py) and deployed
 > by [`deploy_blind_chunked.py`](./deploy_blind_chunked.py), on ~50 camera-free episodes with
-> the cube at a **single taped position** (a blind policy cannot adapt to a moved cube — the
-> "vary the start position" rule below is for vision policies, and its violation *is* the
-> demo's punchline). Two version-specific facts worth keeping: `lerobot-record` happily records
+> the cube at a **single taped position**. The baseline **fails on the arm by design** — that
+> failure is the session's finale and fixing it is the mini-project, so the instructors'
+> working reference solution lives outside the repository (see the `.gitignore` in this
+> folder) and must never be committed. Facts worth keeping: `lerobot-record` happily records
 > without cameras, but **`lerobot-train` with `--policy.type=act` refuses an image-free
-> dataset** ("You must provide at least one image..."), hence the custom training script. The
-> rest of this document is the with-camera pipeline, kept for a future edition with a webcam
-> and a GPU. Calibration, ports, teleop and replay sections apply to both variants unchanged.
+> dataset** ("You must provide at least one image..."), hence the custom training script; and
+> if a follower joint sits pinned tens of degrees from its commanded value for a whole
+> session (ours: wrist_roll, 42.5° — a leader/follower offset against a mechanical stop),
+> the motor strains the entire time and eventually trips its **overload protection**, which
+> latches until a power cycle. The deploy script pins such never-moved joints to their
+> observed state for exactly this reason. The rest of this document is the with-camera
+> pipeline, kept for a future edition with a webcam and a GPU. Calibration, ports, teleop
+> and replay sections apply to both variants unchanged.
 
 ## What we need, and why
 

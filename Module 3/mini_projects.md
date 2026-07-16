@@ -2,81 +2,82 @@
 
 There is one project, and everyone does it.
 
-> **Train a policy on our demonstration dataset, so that it can actually do the task.**
-> **On the last day, the best few policies in the class get deployed on the real arm.**
+> **In the session, you watched a policy trained on fifty real demonstrations fail on the
+> very arm that produced them. Fix it.**
+> **On the last day, the best fixes get deployed on the real arm, live.**
 
-In [`tutorial_3b.ipynb`](./part2_imitation_learning/tutorial_3b.ipynb) you fit a policy to
-demonstrations by maximum likelihood, and then watched a properly trained one drive the arm. Your
-job is to close the gap between those two things.
+## What you inherit
 
-## The data
+- **The dataset.** ~50 camera-free pick-and-place episodes we teleoperated on our arm, the
+  cube starting from one fixed, taped position every time. The Hub id is announced in the
+  session. Everything loads through `LeRobotDataset`, exactly as in the tutorial.
+- **The baseline.**
+  [`train_blind_chunked.py`](./part2_imitation_learning/train_blind_chunked.py) — the
+  tutorial's clone with action chunking (Section 4.1's upgrade #2) already applied, plus a
+  normalized-time input. This exact script trained the policy that failed in front of you.
+- **The harness.**
+  [`deploy_blind_chunked.py`](./part2_imitation_learning/deploy_blind_chunked.py) — how any
+  checkpoint gets run on the arm: ramp to home pose, clamping to training ranges, rate
+  limiting. Your submission will be run by this harness, unchanged.
 
-Train on whichever dataset serves your question — but physics decides what can be deployed,
-so know what each one buys you.
+The baseline's training loss is *excellent* — it predicts the demonstrated actions to about
+a degree of error, on held-out data too. Sit with that fact until it bothers you: the policy
+imitates the demonstrations nearly perfectly, frame by frame, and still cannot do the task.
+That contradiction is the whole project.
 
-**The public tutorial dataset,**
-[`lerobot/svla_so101_pickplace`](https://huggingface.co/datasets/lerobot/svla_so101_pickplace).
-The only data with camera frames, so anything visual — the "give it eyes" upgrade below — is
-explored here. But be clear about deployment: a *vision* policy trained on it can never drive
-our arm, because it would be looking for a table, a lighting, a camera angle that are not
-there. Demonstrations do not transfer across scenes. A *blind* policy trained on it, however,
-**can** be deployed: properly calibrated SO-101s agree about what "joint 2 at 45°" means, so a
-state-only policy carries across arms the way `lerobot-replay` does, and on deployment day we
-place the cube where your policy reaches — the same trick the tutorial used for replay. One
-catch, and it is a good one: their demonstrators *varied* the cube position (their policy had
-eyes), so blindly cloning all the episodes averages incompatible trajectories. Choosing which
-demonstrations to clone is a real project in itself.
+## Diagnose before you fix
 
-**Our arm's dataset** (Hub id announced in the session): ~50 camera-free episodes recorded on
-the demo arm with the cube taped to one spot — the dataset behind the Section 5 finale. Six
-joint angles in, six motor targets out, no images. Consistent by construction: policies
-trained on it inherit the taped geometry of the demo table, so this is the reliable route to
-a deployable policy.
+Questions worth taking seriously, in roughly the order we would ask them:
 
-Everything loads through `LeRobotDataset`, exactly as in the tutorial.
+- Mid-task, the arm passes through very similar joint angles reaching *down* to the cube and
+  lifting *back up* with it. What, in the policy's input, distinguishes those two moments?
+  Is it enough?
+- Pick two episodes and compare them at the same elapsed time. Are they doing the same thing
+  seven seconds in? Should "seven seconds in" mean anything to a policy at all? Is there
+  something in the data that says where an episode *actually* is in the task?
+- Are all fifty demonstrations equally good? Equally alike? What does an MSE-trained network
+  produce where demonstrations disagree?
+- At deployment, the policy's own actions produce its next inputs, so its small mistakes
+  feed back. The training data contains no such states. Can you measure that gap without
+  touching a robot?
 
-## Where to start: the two upgrades
-
-The tutorial's clone is deliberately minimal, and Section 4.1 named the two things it is missing.
-Fixing either one is a real result. Fixing both is roughly what a deployable policy is.
-
-**1. Give it eyes.** The clone's only input is its own joint angles, so when the cube moves it
-reaches for the *average* cube — you watched exactly this failure in the Section 5 finale. This
-is not fixable by making the network bigger: the information is not in the input. Feed the
-camera in: a small convolutional network on downsampled frames, alongside the joint angles.
-Trains on a laptop in minutes. (Use the public dataset — it is the one with images. A vision
-policy is judged on held-out episodes rather than on the arm, and a careful analysis of *when*
-vision helps is exactly the kind of figure we want to see.)
-
-**2. Let it plan ahead.** The clone re-decides from scratch at every frame, on top of its own
-accumulating errors, so it drifts into states no demonstrator ever visited. Predict a *chunk* of
-the next ~30 actions at once and execute them, instead of one action at a time.
-
-Both upgrades together, done properly, are essentially [ACT](https://arxiv.org/abs/2304.13705) —
-and if you would rather stand on the shoulders of giants than write your own, **LeRobot will
-train ACT for you on a free Colab GPU** (`lerobot-train`, a few hours, unattended). Doing that
-well, and understanding *why* it works, is a perfectly good project. So is writing your own
-smaller version and comparing.
-
-Beyond those two, anything is fair game: how much data you actually need, throwing away the worst
-demonstrations, data augmentation, or a loss that can represent more than one way of doing the
-task (the demonstrations are not all alike, and mean-squared error quietly averages them).
+Any one of these, followed carefully, leads to a real fix. Several of them compose.
 
 ## One trap worth hunting on purpose
 
-Try adding **the previous action** to your policy's input. Your held-out error will improve, and
-your policy will get *worse* — because copying your own last action is an excellent way to
-predict the next one and a terrible way to do a task.
+Try adding **the previous action** to your policy's input. Your held-out error will improve,
+and your policy will get *worse* — because copying your own last action is an excellent way
+to predict the next one and a terrible way to do a task.
 
 That is [causal confusion](https://arxiv.org/abs/1905.11979), and it is exactly the
 over-imitating child from Section 1 of the tutorial: faithfully copying the part of the
 demonstration that had nothing to do with why it worked.
 
-It is also a warning about your scoreboard. **Held-out prediction error is not competence.** It
-grades your policy frame by frame while handing it the true state every time, so its mistakes
-never come home to roost — the one thing that cannot happen on a real robot. Watch out for
-changes that improve the number and hurt the robot. Action chunking can even go the other way:
-slightly worse held-out error, considerably better behaviour.
+It is also a warning about your scoreboard, one the session already demonstrated on real
+hardware. **Held-out prediction error is not competence.** It grades your policy frame by
+frame while handing it the true state every time, so its mistakes never come home to roost —
+the one thing that cannot happen on a real robot. You watched a policy with superb held-out
+error grasp thin air.
+
+## The scoreboard that actually predicts the robot
+
+Better than held-out error: a **closed-loop rollout on your laptop**. Start from the
+demonstrations' home pose, feed the policy its own predicted actions as if the servos
+executed them, roll out a full episode, and compare the resulting trajectory to the
+demonstrations — above all, *where is the gripper when it closes?* A policy that survives
+its own feedback loop offline has earned a shot at the arm. One that only looks good with
+the true state spoon-fed to it has not.
+
+## Optional second front: vision
+
+Our dataset has no images (the deployment rig has no camera), so the fix above is a
+state-and-time problem. If your group wants the vision upgrade from Section 4.1, use the
+public tutorial dataset
+[`lerobot/svla_so101_pickplace`](https://huggingface.co/datasets/lerobot/svla_so101_pickplace)
+— it has camera frames and *varied* cube positions, which is exactly when vision earns its
+keep. A vision policy cannot be deployed on our rig, so it is judged on held-out episodes
+and on the quality of your analysis; a careful figure showing *when* eyes help and when they
+do not is a first-rate deliverable.
 
 ## Scope and deliverable
 
@@ -85,21 +86,19 @@ presentation. A negative result you can explain beats a positive result you cann
 
 ## Deployment day
 
-Submit a trained policy by the deadline announced in the session. We cannot run thirty policies
-on one arm, so we will pick **the best few** and run those in front of everyone on the last day.
+Submit a trained policy by the deadline announced in the session. We cannot run thirty
+policies on one arm, so we will pick **the best few** — judged by your offline rollouts —
+and run those in front of everyone on the last day.
 
 Three rules, and they exist because a policy that has drifted off the demonstrations will
 happily command a pose that damages a real motor:
 
-- your policy's input is the **six joint angles** — that is everything the arm can observe
-  (there is no camera on the deployment rig);
+- your policy's input is the **six joint angles plus phase** — that is everything the
+  deployment harness can provide (there is no camera on the rig);
 - your policy must run at **15 Hz or better on CPU** — the arm cannot wait for you;
 - your actions will be **clamped** to the joint ranges seen in the training data, and
   rate-limited. Do not rely on the clamp: a policy that needs it is not a policy that works.
 
-We run submissions through the same harness as the finale policy
-([`deploy_blind_chunked.py`](./part2_imitation_learning/deploy_blind_chunked.py)), so the
-easiest interface to hand us is a checkpoint of that shape: state in, chunk of actions out.
-If yours differs, come talk to us before the deadline.
-
-Come and find us early with what you are trying, and we will help you scope it.
+The easiest interface to hand us is a checkpoint the harness already understands: state in,
+chunk of actions out, like the baseline's. If yours differs, come talk to us before the
+deadline — early, with what you are trying, and we will help you scope it.

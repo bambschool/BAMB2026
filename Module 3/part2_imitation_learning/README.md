@@ -4,9 +4,9 @@ Welcome to the second part of Module 3. In part 1, our agent learned to act by t
 
 So in this part we take the reward away. Instead, a human demonstrates the task, and we fit a policy to the demonstrated behaviour. This is **imitation learning**, and its simplest form, **behavioural cloning**, turns out to be something you already know how to do: it is maximum-likelihood model fitting on behavioural data, exactly as in Module 2, except that the participant is a robot and the choice is a six-dimensional continuous action.
 
-You will be working with [`tutorial_3b.ipynb`](./tutorial_3b.ipynb), the jupyter notebook with all instructions and code. It is short and simple: look at real demonstration data, fit a policy to it on your laptop, and then watch a policy trained exactly that way drive the real arm at the front of the room.
+You will be working with [`tutorial_3b.ipynb`](./tutorial_3b.ipynb), the jupyter notebook with all instructions and code. It is short and simple: look at real demonstration data, fit a policy to it on your laptop, and then watch what happens when a policy trained exactly that way drives the real arm at the front of the room. What happens is instructive.
 
-The [mini-project](../mini_projects.md) picks up from there: train a policy good enough that we would trust it on the arm, and the best few in the class get deployed on the last day.
+The [mini-project](../mini_projects.md) picks up from there: fix the policy that just failed in front of you, and the best few fixes in the class get deployed on the arm on the last day.
 
 ## What you need
 
@@ -66,11 +66,12 @@ Four commands are worth having in your fingers, all documented in the [LeRobot w
 
 ### Prepare this before the school
 
-The finale of the session (Section 5) is a policy we trained by imitation learning, driving the arm by itself. The pipeline is deliberately **camera-free** — the policy is blind, which is both a logistics win (no webcam, no USB hub, no camera pose to protect) and a teaching one (its failure when the cube moves is exactly the mini-project's "give it eyes" motivation, live). Three jobs, done the day before:
+The finale of the session (Section 5) is a policy trained by imitation learning on our own arm — and it **fails on purpose**. The pipeline is deliberately camera-free (no webcam, no USB hub, no camera pose to protect), and the blind policy's confident, wrong grasp is the cliffhanger the mini-project resolves: the students' job is to fix it. This makes the live demo nearly risk-free — failure is the expected outcome, and the working contrast is `lerobot-replay` of a recorded episode, guaranteed by construction. Four jobs, done the day before:
 
-1. **Clamp the arm base and tape one cube start position and the bin position.** Geometry relative to the base is the only thing a blind policy knows, so the tape is the whole contract between training and deployment.
-2. **Record ~50 pick-and-place episodes on our arm** with `lerobot-record` and no `--robot.cameras` flag, the cube starting on its tape every episode — about half an hour. Push to the Hub afterwards; it is one of the two datasets the mini-project offers.
-3. **Train the finale policy** with [`train_blind_chunked.py`](./train_blind_chunked.py) (the notebook's blind clone plus action chunking — minutes on a laptop CPU, no GPU), then verify with [`deploy_blind_chunked.py`](./deploy_blind_chunked.py), dry-run first.
+1. **Clamp the arm base and tape one cube start position and the bin position.** Geometry relative to the base is the only thing a blind policy knows, so the tape is the whole contract between recording and the demo.
+2. **Record ~50 pick-and-place episodes on our arm** with `lerobot-record` and no `--robot.cameras` flag, the cube starting on its tape every episode — about half an hour. Push to the Hub afterwards and announce the id: it is the mini-project dataset.
+3. **Train the baseline** with [`train_blind_chunked.py`](./train_blind_chunked.py) (the notebook's blind clone plus action chunking — minutes on a laptop CPU, no GPU), then verify with [`deploy_blind_chunked.py`](./deploy_blind_chunked.py): dry-run first, then one live run so you know its exact failure before the room does.
+4. **Verify the project is solvable.** Keep a working reference solution *outside the repository* — never commit it, inventing it is the project — and confirm it beats the baseline in closed-loop rollout.
 
 The original camera-and-ACT pipeline is documented in [`robot_setup.md`](./robot_setup.md), for a future edition with a webcam and a GPU. Note for that path: lerobot 0.5.1's ACT refuses to train on an image-free dataset, which is why the blind pipeline has its own training script.
 
