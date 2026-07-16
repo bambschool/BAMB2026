@@ -72,8 +72,11 @@ def main():
     home = ckpt["home"]
 
     # Joints the demonstrations never moved: command their observed state.
-    x_mean, x_std = policy.x_mean[:6], policy.x_std[:6]
-    pinned = {i: x_mean[i].item() for i in range(6) if x_std[i].item() < 0.5}
+    if "state_mean" in ckpt:
+        s_mean, s_std = ckpt["state_mean"], ckpt["state_std"]
+    else:
+        s_mean, s_std = policy.x_mean[:6], policy.x_std[:6]
+    pinned = {i: s_mean[i].item() for i in range(6) if s_std[i].item() < 0.5}
     if pinned:
         print("pinned joints:", {JOINTS[i]: round(v, 1) for i, v in pinned.items()})
 
@@ -103,7 +106,9 @@ def main():
         while time.perf_counter() < t_end and frame < ep_len:
             state = read_state(robot)
             phase = schedule[min(frame, ep_len - 1)]
-            x = torch.cat([state, phase.reshape(1)]).unsqueeze(0)
+            # The available inputs are [6 joint angles, phase]; a checkpoint
+            # may declare a smaller d_in to use only the trailing ones.
+            x = torch.cat([state, phase.reshape(1)])[-ckpt["d_in"]:].unsqueeze(0)
             with torch.no_grad():
                 chunk = policy(x)[0]  # (chunk_size, 6)
             chunk = torch.clamp(chunk, low, high)
