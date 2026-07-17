@@ -51,7 +51,7 @@ themselves (they look for the folder containing both `Data/` and `Libraries/`).
 | `03_individual_differences.py` | Fit a per-monkey parameter so the model reproduces individual differences in monkeys gaze patterns. |
 
 ## Data 
-You can download this separately [here](https://www.dropbox.com/scl/fo/s35lkrar4n3lcuk092iyw/AB7A5UFvaiOIIboGJOhi_I4?rlkey=4bdjwewg7ue50bjg7e8yv53ye&dl=0). 
+You can download the data separately [here](https://www.dropbox.com/scl/fo/s35lkrar4n3lcuk092iyw/AB7A5UFvaiOIIboGJOhi_I4?rlkey=4bdjwewg7ue50bjg7e8yv53ye&dl=0). The data have been generously shared by our collaborators for use in this Summer School only. Please do not redistribute, share, or use these data outside the Summer School without permission. Thank you for helping us respect our collaborators' trust and generosity.
 
 ## Layout
 
