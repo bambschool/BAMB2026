@@ -38,9 +38,6 @@ pip install -r requirements.txt    # numpy, pandas, scipy, matplotlib, marimo
 marimo edit Notebooks/01_within_option_looking.py
 ```
 
-Run each notebook from anywhere in the repo — the notebooks locate the project root
-themselves (they look for the folder containing both `Data/` and `Libraries/`).
-
 ## The parts
 
 | Part | Description |
