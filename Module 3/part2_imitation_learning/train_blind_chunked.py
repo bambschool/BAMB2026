@@ -124,6 +124,7 @@ def main():
         {
             "model": model.state_dict(),
             "d_in": X.shape[1], "d_out": Y.shape[2], "chunk_size": CHUNK_SIZE,
+            "hidden": 256,
             "action_low": action_low, "action_high": action_high,
             "phase_schedule": schedule,
             # Mean starting pose of the training episodes: deployment ramps
