@@ -16,7 +16,9 @@ There is one project, and everyone does it.
     fixed, taped position** every time. This is the dataset behind the failing baseline.
   - [`nisheet0/bamb2026_so101_pickplace_vision`](https://huggingface.co/datasets/nisheet0/bamb2026_so101_pickplace_vision)
     — 50 episodes recorded **by you** in the session, with a wrist camera
-    (`observation.images.wrist`, 480×640 RGB) and **varied** ball start positions.
+    (`observation.images.wrist`, 480×640 RGB). The ball again starts from one fixed
+    spot, but the scene is mirrored: the drop target sits on the **right** instead of
+    the left.
 - **The baseline.**
   [`train_blind_chunked.py`](./part2_imitation_learning/train_blind_chunked.py) — the
   tutorial's clone with action chunking (Section 4.1's upgrade #2) already applied, plus a
@@ -54,10 +56,10 @@ deciding which demonstrations deserve imitation is legitimate, gradeable project
 Free choices, all of them legitimate:
 
 - **Either dataset.** The blind one is the cleaner scientific puzzle (the failure you
-  watched, and its fix, live entirely in states and time). The vision one is the fuller
-  robot-learning experience — your own demonstrations, varied ball positions, and a camera
-  to feed in. You may ignore the images in the vision dataset and treat it as a second
-  blind dataset if you prefer.
+  watched, and its fix, live entirely in states and time). The vision one is your own
+  demonstrations, with a camera available to feed in — though since the ball is fixed
+  there too, you may equally ignore the images and treat it as a second blind dataset
+  with a mirrored scene.
 - **Imitation learning is the recommended route** — it is what the module taught, the
   baseline gives you a running start, and it is what we know can work. But it is not
   mandatory: anything that maps the harness's inputs to actions is a valid submission, and
@@ -100,9 +102,10 @@ yours:
 3. **Curate the episodes.** Not all fifty demonstrations are equally alike; decide which
    ones deserve to be imitated, and defend the decision in your write-up.
 
-For the vision dataset the same three ideas apply, plus a small convolutional encoder for
-the wrist image (Section 4.1's upgrade #1) — and vision is what makes *varied* ball
-positions learnable at all.
+For the vision dataset the same three ideas apply. A small convolutional encoder for the
+wrist image (Section 4.1's upgrade #1) is a legitimate extension — but with the ball at a
+fixed position it is not strictly *needed*, and understanding why is itself a good
+question to answer in your couple of words.
 
 ## One trap worth hunting on purpose
 
@@ -134,15 +137,17 @@ the true state spoon-fed to it has not.
 
 ## Scope and deliverable
 
-Four groups, twelve hours. One clear figure answering one clear question, plus a short
-presentation. A negative result you can explain beats a positive result you cannot.
+Groups are pre-assigned; four of them chose the robot project. **The presentation is the
+live run on the arm, plus a couple of words about how you got there — no slides.** A
+negative result you can explain beats a positive result you cannot.
 
 ## Deployment day
 
-**Every group demos on the real arm.** Submit **one `.pt` file** to Nisheet (Slack DM) by
-the deadline announced on Slack, and say **which dataset you trained on** — that determines
-the action clamps, the home pose, the episode length, and whether the camera is attached
-for your run.
+**Every robot-project group demos on the real arm.** Submit **one `.pt` file** to Nisheet
+(Slack DM) by the deadline announced on Slack, and say **which dataset you trained on** —
+that determines the action clamps, the home pose, the episode length, and whether the
+camera is attached for your run. You can also come try your `.pt` on the demo laptop any
+time before the deadline — earlier beats later.
 
 Two accepted formats:
 
@@ -174,8 +179,8 @@ happily command a pose that damages a real motor:
 - your actions will be **clamped** to the joint ranges seen in your training dataset, and
   rate-limited. Do not rely on the clamp: a policy that needs it is not a policy that works.
 
-Evaluation scene: blind-dataset policies get the ball at its taped spot; vision-dataset
-policies get the ball at one of the taped start marks, chosen by us on the day.
+Evaluation scene: the ball at its taped spot, in the scene of whichever dataset you
+trained on (drop target left for the blind dataset, right for the vision one).
 
 **Test before you submit**: run your `.pt` through your own closed-loop rollout, and check
 that `torch.jit.load("group<N>.pt")` followed by a call with the example inputs above
