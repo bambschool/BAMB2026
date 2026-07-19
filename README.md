@@ -60,10 +60,10 @@ From gridworlds to real robots: how an agent learns to act, by trial and error a
 
 Model-based reinforcement learning, non-parametric environment clustering, and Gaussian-process regression, applied to spatial foraging (Wu et al., 2025).
 
-- [Introduction, setup, and resources](Module%204/README.md)
-- Block 1: DYNA-Q and gridworld navigation
+- [Overview, setup, and data](Module%204/README.md)
+- Part 1: Model-based reinforcement learning
   - Tutorial: [notebook](Module%204/day1_block1_dyna_q.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/Module-4/Module%204/day1_block1_dyna_q.ipynb)
-- Block 2: Non-stationary environments with a CRP prior (DINER)
+- Part 2: Chinese Restaurant Processes and non-stationary environments
   - Tutorial: [notebook](Module%204/day1_block2_crp_dyna.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/Module-4/Module%204/day1_block2_crp_dyna.ipynb)
-- Block 3: Gaussian-process regression and GP-UCB for spatial foraging
+- Part 3: Gaussian process regression as Bayesian value function approximation
   - Tutorial: [notebook](Module%204/day1_block3_gp_ucb.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/Module-4/Module%204/day1_block3_gp_ucb.ipynb)
