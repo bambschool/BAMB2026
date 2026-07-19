@@ -1,4 +1,4 @@
-# Module 4: Spatial cognition and adaptive foraging
+# Module 4: Structure Learning
 
 Materials for Module 4 of [BAMB! 2026](https://www.bambschool.org/), by Charley M. Wu (TU Darmstadt, [hmc-lab.com](https://hmc-lab.com/)).
 
