@@ -27,18 +27,18 @@ Where provided, tutorials are available in two versions:
 ## Module 2: Reinforcement learning and Bayesian decision theory
 
 - Part 1: Reinforcement-learning models
-  - Tutorial: [notebook](Module2/part_1/module2_part1_rl.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module2/part_1/module2_part1_rl.ipynb)
-  - Solutions: [notebook](Module2/part_1/module2_part1_rl_solutions.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module2/part_1/module2_part1_rl_solutions.ipynb)
+  - Tutorial: [notebook](Module%202/part_1/module2_part1_rl.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%202/part_1/module2_part1_rl.ipynb)
+  - Solutions: [notebook](Module%202/part_1/module2_part1_rl_solutions.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%202/part_1/module2_part1_rl_solutions.ipynb)
 - Part 2: Bayesian decision theory
-  - Tutorial: [notebook](Module2/part_2/module2_part2.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module2/part_2/module2_part2.ipynb)
-  - Solutions: [notebook](Module2/part_2/module2_part2_solutions.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module2/part_2/module2_part2_solutions.ipynb)
+  - Tutorial: [notebook](Module%202/part_2/module2_part2.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%202/part_2/module2_part2.ipynb)
+  - Solutions: [notebook](Module%202/part_2/module2_part2_solutions.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%202/part_2/module2_part2_solutions.ipynb)
 
 ### Mini-projects
 
-- [Download the Rouault et al. task (.zip)](https://github.com/bambschool/BAMB2026/raw/refs/heads/main/Module2/rouault_task.zip)
+- [Download the Rouault et al. task (.zip)](https://github.com/bambschool/BAMB2026/raw/refs/heads/main/Module%202/rouault_task.zip)
 - [Python codebase](https://github.com/dikshagup/changes_of_mind_bamb)
 - [Matlab codebase](https://github.com/marionrouault/actobscom)
-- [BAMB! 2026 dataset](https://github.com/bambschool/BAMB2026/raw/refs/heads/main/Module2/bamb_data_rouault_task.zip)
+- [BAMB! 2026 dataset](https://github.com/bambschool/BAMB2026/raw/refs/heads/main/Module%202/bamb_data_rouault_task.zip)
 
 ## Module 3: Learning to act
 
@@ -55,3 +55,13 @@ From gridworlds to real robots: how an agent learns to act, by trial and error a
 ### Mini-projects
 
 - [Project guide and datasets](Module%203/mini_projects.md)
+
+## Module 4: Structure Learning
+
+- [Overview](Module%204/README.md)
+- Part 1: Model-based reinforcement learning
+  - Tutorial: [notebook](Module%204/day1_block1_dyna_q.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%204/day1_block1_dyna_q.ipynb)
+- Part 2: Chinese Restaurant Processes and non-stationary environments
+  - Tutorial: [notebook](Module%204/day1_block2_crp_dyna.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%204/day1_block2_crp_dyna.ipynb)
+- Part 3: Gaussian process regression as Bayesian value function approximation
+  - Tutorial: [notebook](Module%204/day1_block3_gp_ucb.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%204/day1_block3_gp_ucb.ipynb)
