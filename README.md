@@ -65,3 +65,11 @@ From gridworlds to real robots: how an agent learns to act, by trial and error a
   - Tutorial: [notebook](Module%204/day1_block2_crp_dyna.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%204/day1_block2_crp_dyna.ipynb)
 - Part 3: Gaussian process regression as Bayesian value function approximation
   - Tutorial: [notebook](Module%204/day1_block3_gp_ucb.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%204/day1_block3_gp_ucb.ipynb)
+ 
+### Mini-projects
+
+- Track 1: Designing experiments for model discriminability
+  - Notebook: [notebook](Module%204/day2_track1_recovery.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/module4-projects/Module%204/day2_track1_recovery.ipynb)
+- Track 2: Fitting a GP choice model to spatial foraging data
+  - Notebook: [notebook](Module%204/day2_track2_gpucb_foraging.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/module4-projects/Module%204/day2_track2_gpucb_foraging.ipynb)
+
