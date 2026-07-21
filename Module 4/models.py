@@ -467,8 +467,11 @@ def locality_feature(X_all: np.ndarray, x_current: Optional[np.ndarray]) -> np.n
     """
     if x_current is None:
         return np.zeros(len(X_all))
-    diffs = X_all - x_current[np.newaxis, :]   # (N, 2)
-    return -np.sqrt((diffs ** 2).sum(axis=1))   # (N,), range [−√(57²+57²), 0] in raw coords
+    # Changed for Excr 2 in section 6.1
+    ell = 6
+    diffs = X_all - x_current[np.newaxis, :]
+    distances = np.sqrt((diffs ** 2).sum(axis=1))# (N, 2)
+    return np.exp(-distances / ell)   # (N,), range [−√(57²+57²), 0] in raw coords
 
 
 def _visited_mask(X_all: np.ndarray, X_obs: np.ndarray) -> np.ndarray:
