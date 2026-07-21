@@ -1,6 +1,6 @@
 # Module 5: Complex Motor Behavior
 
-Materials for Module 5 of [BAMB! 2026](https://www.bambschool.org/), by Hieke Stein and Klaus Wimmer.
+Materials for Module 5 of [BAMB! 2026](https://www.bambschool.org/), by Heike Stein and Klaus Wimmer.
 
 ## Tutorials
 
