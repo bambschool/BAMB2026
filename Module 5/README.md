@@ -9,7 +9,7 @@ The easiest way in is Google Colab: click a badge and run the notebook from top 
 
 **Part 1 — From tracking data to latent dynamics** &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial1_zebrafish_latent_dynamics.ipynb)
 
-**Part 2 — Nonlinear Dynamics: Kuramoto demo* &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial2_kuramoto_explorer.ipynb)
+**Part 2 — Nonlinear Dynamics: Kuramoto demo** &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial2_kuramoto_explorer.ipynb)
 
 **Part 2 — Nonlinear Dynamics: Coupled Oscillators in Fly Walking** &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial2_fly_nonlinear_dynamics.ipynb)
 
