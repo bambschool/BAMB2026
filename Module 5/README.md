@@ -6,5 +6,8 @@ Materials for Module 5 of [BAMB! 2026](https://www.bambschool.org/), by Heike St
 
 The easiest way in is Google Colab: click a badge and run the notebook from top to bottom. The first section grabs the files it needs from this repo and installs the packages, so there is nothing to set up by hand.
 
+
+**Part 1 — From tracking data to latent dynamics ** &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%5/tutorial1_zebrafish_latent_dynamics.ipynb)
+
 **Part 2 — Nonlinear Dynamics: Coupled Oscillators in Fly Walking**
 
