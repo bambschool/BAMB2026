@@ -73,3 +73,19 @@ From gridworlds to real robots: how an agent learns to act, by trial and error a
 - Track 2: Fitting a GP choice model to spatial foraging data
   - Notebook: [notebook](Module%204/day2_track2_gpucb_foraging.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%204/day2_track2_gpucb_foraging.ipynb)
 
+## Module 5: Complex motor behavior
+
+- [Overview and resources](Module%205/README.md)
+- Part 1: From tracking data to latent dynamics
+  - Tutorial: [notebook](Module%205/tutorial1_zebrafish_latent_dynamics.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial1_zebrafish_latent_dynamics.ipynb)
+  - Solutions: [notebook](Module%205/tutorial1_zebrafish_latent_dynamics_solution.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial1_zebrafish_latent_dynamics_solution.ipynb)
+- Part 2: Nonlinear dynamics
+  - Kuramoto demo: [notebook](Module%205/tutorial2_kuramoto_explorer.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial2_kuramoto_explorer.ipynb)
+  - Coupled oscillators in fly walking: [notebook](Module%205/tutorial2_fly_nonlinear_dynamics.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial2_fly_nonlinear_dynamics.ipynb)
+  - Solutions: [notebook](Module%205/tutorial2_fly_nonlinear_dynamics_solution.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial2_fly_nonlinear_dynamics_solution.ipynb)
+
+### Mini-projects
+
+- Fish — Hierarchical structure in zebrafish behavior: [Categorical AR-HMM project notebook](Module%205/data/nested_hmm_simulate_and_fit_STUDENT.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/data/nested_hmm_simulate_and_fit_STUDENT.ipynb)
+- Fly — Nonlinear dynamics of walking: [project notebook](Module%205/tutorial2_fly_nonlinear_dynamics.ipynb) and [Kuramoto explorer](Module%205/tutorial2_kuramoto_explorer.ipynb)
+- Transformer — Rock-paper-scissors behavior forecasting: [project notebook](https://github.com/kristinbranson/roshambo_transformer/blob/main/roshambo_data.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kristinbranson/roshambo_transformer/blob/main/roshambo_data.ipynb) and [project repository](https://github.com/kristinbranson/roshambo_transformer)
