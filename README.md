@@ -86,6 +86,8 @@ From gridworlds to real robots: how an agent learns to act, by trial and error a
 
 ### Mini-projects
 
-- Fish — Hierarchical structure in zebrafish behavior: [project notebook](Module%205/tutorial1_zebrafish_latent_dynamics.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial1_zebrafish_latent_dynamics.ipynb)
+- Fish — Hierarchical structure in zebrafish behavior
+  - Model building: [Categorical AR-HMM: simulate and fit](Module%205/data/nested_hmm_simulate_and_fit_STUDENT.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/data/nested_hmm_simulate_and_fit_STUDENT.ipynb)
+  - Data analysis: [Categorical AR-HMM on zebrafish chemotaxis bouts](Module%205/data/nested_hmm_zebrafish_STUDENT.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/data/nested_hmm_zebrafish_STUDENT.ipynb)
 - Fly — Nonlinear dynamics of walking: [project notebook](Module%205/tutorial2_fly_nonlinear_dynamics.ipynb) and [Kuramoto explorer](Module%205/tutorial2_kuramoto_explorer.ipynb)
 - Transformer — Rock-paper-scissors behavior forecasting: [project notebook](https://github.com/kristinbranson/roshambo_transformer/blob/main/roshambo_data.ipynb) [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kristinbranson/roshambo_transformer/blob/main/roshambo_data.ipynb) and [project repository](https://github.com/kristinbranson/roshambo_transformer)

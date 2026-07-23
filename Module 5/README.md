@@ -19,8 +19,10 @@ Choose one of the following three mini-projects.
 
 ### Fish — Hierarchical structure in zebrafish behavior
 
-- Project notebook: [From tracking data to latent dynamics](tutorial1_zebrafish_latent_dynamics.ipynb) &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial1_zebrafish_latent_dynamics.ipynb)
-- Project notebook solution: [notebook](tutorial1_zebrafish_latent_dynamics_solution.ipynb) &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial1_zebrafish_latent_dynamics_solution.ipynb)
+- Model-building notebook: [Categorical AR-HMM: simulate and fit](data/nested_hmm_simulate_and_fit_STUDENT.ipynb) &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/data/nested_hmm_simulate_and_fit_STUDENT.ipynb)
+- Data-analysis notebook: [Categorical AR-HMM on zebrafish chemotaxis bouts](data/nested_hmm_zebrafish_STUDENT.ipynb) &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/data/nested_hmm_zebrafish_STUDENT.ipynb)
+- Background tutorial: [From tracking data to latent dynamics](tutorial1_zebrafish_latent_dynamics.ipynb) &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial1_zebrafish_latent_dynamics.ipynb)
+- Background tutorial solution: [notebook](tutorial1_zebrafish_latent_dynamics_solution.ipynb) &nbsp; [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/bambschool/BAMB2026/blob/main/Module%205/tutorial1_zebrafish_latent_dynamics_solution.ipynb)
 
 ### Fly — Nonlinear dynamics of walking
 
